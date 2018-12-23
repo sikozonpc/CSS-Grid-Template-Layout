@@ -1,0 +1,56 @@
+*{
+    color: #87ceeb;
+    font-size: 8vh;
+    text-align: center;
+}
+
+/*Mobile First*/
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "title title"
+    "header header"
+    "sidebar sidebar"
+    "content content"
+    "footer footer";
+}
+
+.grid div:nth-child(even){
+    background: gray;
+}
+.grid div:nth-child(odd){
+    background: black;
+}
+
+.title{
+    grid-area: title;
+}
+
+.header{
+    grid-area: header;
+}
+
+.sidebar{
+    grid-area: sidebar;
+}
+
+.content{
+    grid-area: content;
+}
+
+.footer{
+    grid-area: footer;
+}
+
+/*Desktop Version*/
+@media screen and (min-width: 736px){
+    .grid {
+        display: grid;
+        /*Notice the side columns are the wrapper*/
+        grid-template-columns: 1fr 650px 650px 1fr;
+        grid-template-areas: ". title title ."
+        ". header header ."
+        ". sidebar content ."
+        ". footer footer .";
+    }
+}
